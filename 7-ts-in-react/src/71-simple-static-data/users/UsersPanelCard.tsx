@@ -1,7 +1,11 @@
 import type { User } from "../model/User";
 
+// Czemu funkcja:
+UsersPanelCard.propTypes = {
 
-export function UsersPanelCard({user}: {user: User}) {
+}
+
+export function UsersPanelCard({ user }: { user: User }) {
     return (
         <div className="card">
             <div className="card-image">
@@ -21,9 +25,9 @@ export function UsersPanelCard({user}: {user: User}) {
                         <p className="subtitle is-6">{user.email}</p>
                     </div>
                 </div>
-                 <div className="content">
-                     {user?.company?.catchPhrase}
-                 </div>
+                <div className="content">
+                    {user?.company?.catchPhrase}
+                </div>
                 <div className="content">
                     {user.website}
                 </div>
@@ -31,3 +35,15 @@ export function UsersPanelCard({user}: {user: User}) {
         </div>
     )
 }
+
+// Uwaga na takie zapisy:
+
+/*
+callMe()
+
+const MY_VAR = 10;
+
+function callMe() {
+    console.log(MY_VAR)
+}
+*/
