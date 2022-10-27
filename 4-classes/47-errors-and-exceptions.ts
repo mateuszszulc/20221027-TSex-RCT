@@ -43,7 +43,7 @@ function canThrowAnything(): never  {
 
 // Lepsze podejście:
 class MyOwnError extends Error {
-    constructor(message: string, public readonly myErrorCode = 0) {
+    constructor(message: string, readonly myErrorCode = 0) {
         super(message);
     }
 }

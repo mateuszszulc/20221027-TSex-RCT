@@ -52,6 +52,10 @@ function isCurrency(currency: number | string | Currency): currency is Currency 
 
 const cash = getCash(20)
 
+if(cash instanceof Currency) {
+
+}
+
 if(isCurrency(cash)) { // TypePredicate TypeGuard:
     console.log('Your $$ value is', cash.value)
 }
@@ -59,7 +63,7 @@ if(isCurrency(cash)) { // TypePredicate TypeGuard:
 function getCash(day: number): number | string | Currency {
   if(day > 0 && day <= 20) return 0
   if(day > 20 && day <= 30) return 'zero'
-  if(day > 30) return { value: 200 }
+  return { value: 200 }
 }
 
 
