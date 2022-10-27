@@ -2,7 +2,7 @@
  * @typedef { import("./CartItem").CartItem } CartItem
  * */
 
-/*
+/**
  * tutaj celowo brakuje jednej "*" powyżej w komentarzu
  *
  * @typedef { import("./Clearable").Clearable } Clearable
@@ -15,6 +15,12 @@ export class ShoppingCart {
 	 * */
 	items = []
 
+	// Extra dodatek:
+	clear() {}
+
+	/**
+	 * @param {CartItem} item
+	 */
 	addItem(item) {
 		this.items.push(item)
 	}
@@ -32,8 +38,12 @@ export class ShoppingCart {
 
 const shoppingCart = new ShoppingCart()
 
-shoppingCart.addItem({})
+shoppingCart.addItem({
+	id: "",
+	name: "",
+	price: 0
+})
 // Zobaczmy typechecking:
-shoppingCart.items.push({})
+// shoppingCart.items.push({})
 
-shoppingCart.getAll().push({})
+// shoppingCart.getAll().pop()
