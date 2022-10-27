@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 // Komentarz powyżej wskazuje kompilerowi typescript — że ma nie analizować tego pliku...
 /**
  * Zadanie 1.6.1:
@@ -19,22 +19,21 @@
  * // @ts-ignore
  * */
 
-let MyHello = 'Hello';
-console.log(MyHello, 'World')
+let myHello = 'Hello';
+console.log(myHello, 'World')
 
-MyHello = 'Serious';
+myHello = 'Serious';
 const help = "HelpMe out!"
 
 let flag = true;
 const LARGE_NUMBER = 2048
 
 // tutaj miał być komentarz, że addNumbers musi zwracać number !
-function addNumbers(a , b): number {
-    return a + b
+function addNumbers(a: number , b: number): number {
+    return a + b;
 }
 
-let result: string;
-result = addNumbers(10, 20);
+const result = addNumbers(10, 20);
 
 console.log('Result is:', result);
 
@@ -42,10 +41,10 @@ const helloStranger = (): string => 'Hello Stranger !';
 
 console.log(helloStranger())
 
-function randomNumber(): string {
+function randomNumber(): number {
     return Math.random() * 100;
 }
 
 console.log('You reached the end! - BRAVO')
 
-export {};
+export { result };
