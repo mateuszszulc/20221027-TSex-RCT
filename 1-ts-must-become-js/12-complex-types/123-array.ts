@@ -48,6 +48,8 @@ twoKindsOfTypes.forEach((value: string | number) => {
 // odfiltrowanie elementów spełniających dany warunek:
 const filtered = myNumbers.filter((value: number) => value > 10);
 
+myNumbers.flat()
+
 console.log(filtered);
 // potwierdzenie, że po filtrowaniu tablica `myNumbers` nie uległa zmianie:
 console.log(myNumbers);
