@@ -19,16 +19,16 @@
  * // @ts-ignore
  * */
 
-const MyHello = 'Hello';
+let MyHello = 'Hello';
 console.log(MyHello, 'World')
 
 MyHello = 'Serious';
 const help = "HelpMe out!"
 
-let do = true;
-const LARGE-number = 2048
+let flag = true;
+const LARGE_NUMBER = 2048
 
-tutaj miał być komentarz, że addNumbers musi zwracać number !
+// tutaj miał być komentarz, że addNumbers musi zwracać number !
 function addNumbers(a , b): number {
     return a + b
 }
@@ -38,9 +38,9 @@ result = addNumbers(10, 20);
 
 console.log('Result is:', result);
 
-console.log(helloStranger())
-
 const helloStranger = (): string => 'Hello Stranger !';
+
+console.log(helloStranger())
 
 function randomNumber(): string {
     return Math.random() * 100;
