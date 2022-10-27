@@ -76,6 +76,9 @@ console.log(typeof inferredAny);
 
 // Wyjątkiem (poprzez buga) - jest `null` - którego sprawdzenie przez `typeof` nic nam nie powie:
 console.log(typeof inferredNull);
+
+console.log(inferredNull === null)
+
 // porównaj z obiektami:
 console.log(typeof new Date());
 console.log(typeof {});
@@ -83,7 +86,7 @@ console.log(typeof []);
 
 // Bonus knowledge:
 // typeof zadziała i może nam również pomóc przy rozpoznaniu funkcji:
-console.log(typeof (() => {}));
+console.log(typeof (() => { }));
 
 // Chcemy, aby ten plik był traktowany jako moduł:
-export {}
+export { }
