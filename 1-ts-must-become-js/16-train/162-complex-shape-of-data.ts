@@ -26,10 +26,11 @@ export interface User {
     vipStatus: boolean 
 }
 
+type Prefix = 'Pani' | 'Pan' | ''
 
 function giveFullName(myUser: User): string {
     const fullName: string = myUser.name + ' ' + myUser.lastName;
-    let prefix = '';
+    let prefix: Prefix = '';
     let suffix = '';
     if (myUser.sex === 'female') {
         prefix = 'Pani';

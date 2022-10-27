@@ -33,7 +33,13 @@ interface CoffeeMaker {
 // Zobacz efekt działania:
 
 // Hint: po usunięciu komentarza poniżej skorzystaj z "implement all members" - będzie szybciej :)
-// const myMaker: CoffeeMaker = {}
+const myMaker: CoffeeMaker = {
+    name: "",
+    coffeeBeansVolume: 0,
+    start(beans: string, timeOfBlend: number | string, amount: number) {
+        return 'coffe is ok!'
+    }
+}
 
 
 // https://www.typescriptlang.org/docs/handbook/2/typeof-types.html

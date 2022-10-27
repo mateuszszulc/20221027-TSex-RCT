@@ -9,11 +9,15 @@
 // Zobaczmy wnioskowanie na wartości:
 let myString = 'Hello String'
 
+// myString = '!'
+
 // Widzimy wyraźnie po najechaniu, że myString: string.
 // Wszystko jasne.
 
 // Jednak jeśli zrobimy tak:
 const myOtherString = 'Super!'
+
+//myOtherString = '?'
 
 // Okaże się, że wnioskowanie pokaże:
 // myOtherString: "Super!"
