@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern JS in Browser</title>
+</head>
+<body>
+    <script src="data-importer.js" type="module"></script>
+    <script>
+	    document.body.style.fontSize = '5em'
+        try {
+	        document.body.style.fontSize = `${LUCKY_NUMBER}em`
+	        document.body.textContent = `Tak! dane są dostępne globalnie, np: ${someObject.name} 😱`
+        } catch( e ) {
+	        document.body.innerHTML += `
+                Błąd...: ${e.message}
+	            <hr>
+	            Wniosek: dane są hermetycznie zamknięte per moduł (plik).
+	        `
+        }
+    </script>
+</body>
+</html>

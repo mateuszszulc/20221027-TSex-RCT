@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // Zamiast osobno konfigurować "lib" poniżej, można zastosować ten zapis z "target": "ESNext".
+    // Ustalając z TS, że korzystamy z najnowszych dostępnych ficzerków JS:
+    // "target": "ESNext",
+    "lib": [
+      "ES2015",
+      "DOM" // obsługa console.log | Jeśli nie DOM, to: @types/node
+      /*
+        // Można też osobno wybrać Iterable (Array), Promise oraz Collection (Set i Map)
+
+        "ES2015.Iterable",
+        "ES2015.Promise",
+        "ES2015.Collection",
+        "ES5" // Potrzebne do pełnej obsługi Array (obecnej przed ES2015)
+      */
+    ]
+  }
+}
