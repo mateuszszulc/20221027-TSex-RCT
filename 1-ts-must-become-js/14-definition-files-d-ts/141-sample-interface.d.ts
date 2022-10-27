@@ -13,5 +13,4 @@ export declare interface MathInterface {
     divide(a: number, b :number | 0): number;
 }
 
-declare let mathOLib: MathInterface;
 

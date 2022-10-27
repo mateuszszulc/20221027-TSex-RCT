@@ -73,3 +73,5 @@ class Dancer implements CanDance {
     move(): void {}
     jump(): void {}
 }
+
+export {}
