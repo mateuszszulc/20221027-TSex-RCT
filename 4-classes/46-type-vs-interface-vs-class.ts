@@ -9,11 +9,13 @@
 // Zasadnicza różnica między type a interface:
 
 // type może być aliasem typu prostego lub unią typów
-type Money = number
+type Money = number // Póżniej oddedrę kupon jeśli definicja typu się zmieni na np. { value: number, currency: string }
 type Flag = 'on' | 'off' | 'unset'
 type SomeMoney = {
     value: number
 }
+
+const myMoney: Money = 120
 
 // interface może być TYLKO OBIEKTOWY !
 interface MyMoney {
