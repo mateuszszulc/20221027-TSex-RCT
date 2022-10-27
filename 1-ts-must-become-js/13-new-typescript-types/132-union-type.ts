@@ -29,11 +29,11 @@ class Order {
 
     payment(cashAmount: number | string | Currency) {
         if(typeof cashAmount === 'number') {
-
+            console.log(cashAmount)
         } else if(typeof cashAmount === 'string') {
-
+            console.log(cashAmount)
         } else {
-
+            console.log(cashAmount)
         }
     }
 }
