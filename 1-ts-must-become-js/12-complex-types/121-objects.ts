@@ -7,7 +7,7 @@
  */
 
 // Robiąc klasyczny obiekt w JS, wystarczy nam następujący zapis:
-const myObject = {};
+const myObject: { name?: string } = { };
 
 // Teraz, spodziewamy się, że można dynamicznie rozszerzać obiekt o nowe pola i wartości
 // property: value
@@ -16,7 +16,8 @@ const myObject = {};
 // Okazuje się jednak, że w TypeScript to niemożliwe:
 
 // Odkomentuj, aby sprawdzić:
-// myObject.name = 'toolbox';
+myObject.name = 'toolbox';
+// myObject.lastName = 'toolbox';
 
 /*
 

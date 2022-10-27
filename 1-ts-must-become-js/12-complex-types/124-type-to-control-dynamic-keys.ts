@@ -4,9 +4,8 @@
  *
  * ... i o tym twórcy TS — pomyśleli.
  * */
-
 interface DynamicObject {
-    [key: string]: string
+    [key: string]: string | number;
 }
 
 const dynamicObject: DynamicObject = {
@@ -14,6 +13,7 @@ const dynamicObject: DynamicObject = {
 }
 
 dynamicObject.other = 'field'
+dynamicObject.name = 2
 
 
 // Jako klucze obiektu, możesz zastosować tylko 3 typy:
