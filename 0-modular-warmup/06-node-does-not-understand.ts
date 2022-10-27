@@ -13,10 +13,33 @@
  * Środowiskiem produkcyjnym może być: Przeglądarka albo Node.js !
  * Kompiler (transpiler) TypeScript jest w tym układzie "wpinany" w nasz deweloperski pipeline.
  * */
+ let hello = String(415) + '!';
 
-const hello: string = 'Hello';
-
-console.log(hello);
+ console.log(Number(false))
+ console.log(hello)
+ console.log(typeof String(415))
+ console.log(String(415).charAt(0))
+ 
+ hello = '2.89'
+ 
+ let questionNumber = <string><unknown>1 // type assertion
+ let questionNumber2 = 1 as unknown as string // type assertion inny zapis
+ 
+ // TS, Zaufaj mi wiem co robię to jest string (choćby prawda była inna)
+ 
+ console.log(typeof questionNumber)
+ console.log(typeof questionNumber2)
+ 
+ console.log(questionNumber2.charAt(0))
+ 
+ Promise.resolve(1).then((n) => {
+     console.log(n)
+ })
+ 
+ console.log(hello);
+ 
+ export {} // mówię TS że to jest hermetycznie zamknięty moduł
+ 
 
 /*
  - co musimy zrobić, aby uruchomić kodzik?
