@@ -17,10 +17,12 @@ function joiner(strTuple: [string, string]): string {
 
 // joiner(['', ''])
 
-interface User { 
+export type Sex = 'male' | 'female'
+
+export interface User { 
     name: string, 
     lastName: string, 
-    sex: string, 
+    sex: Sex, 
     vipStatus: boolean 
 }
 
@@ -39,6 +41,13 @@ function giveFullName(myUser: User): string {
     }
     return prefix + ' ' + fullName + suffix;
 }
+
+giveFullName({
+    lastName: 'Kowalski',
+    name: 'Michał',
+    sex: 'male',
+    vipStatus: true
+}) //?
 
 export { };
 
