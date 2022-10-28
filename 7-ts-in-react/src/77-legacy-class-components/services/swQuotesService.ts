@@ -1,5 +1,7 @@
+import { Quote } from "../../74-function-as-a-child-component/model/Quote";
+
 const service = {
-	getAll() {
+	getAll(): Promise<Quote[]> {
 		return new Promise((resolve, reject) => {
 
 			const randomNumber = Math.random();

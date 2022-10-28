@@ -1,10 +1,20 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { BlockQuote } from './BlockQuote'
 import swQuotesService from '../services/swQuotesService'
+import { Quote } from '../../74-function-as-a-child-component/model/Quote'
 
-class MemorableQuotes extends Component {
+type MyProps = {
+	title: string
+}
+type MyState =  {
+	isLoading: boolean,
+	quotes: Quote[],
+	error?: Error
+}
 
-	state= {
+class MemorableQuotes extends Component<MyProps, MyState> {
+
+	state: MyState = {
 		isLoading: false,
 		quotes: [],
 		error: undefined
@@ -16,7 +26,7 @@ class MemorableQuotes extends Component {
 			.then((quotes) => {
 				this.setState({quotes, isLoading: false})
 			})
-			.catch((error) => {
+			.catch((error: Error) => {
 				this.setState({error, isLoading: false})
 			})
 	}
@@ -26,7 +36,7 @@ class MemorableQuotes extends Component {
 	}
 
 	render () {
-		const { title } = this.props as any
+		const { title } = this.props
 		const { isLoading, quotes, error } = this.state;
 
 		return (
