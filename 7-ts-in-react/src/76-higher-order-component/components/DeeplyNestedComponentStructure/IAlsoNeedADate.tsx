@@ -1,6 +1,7 @@
 import React from 'react'
 import { format } from 'date-fns'
 import PropTypes from 'prop-types'
+import { withDate } from '../hoc/withDate';
 
 function formatFancyDate(inputDate: any) {
 	if(inputDate instanceof Date) {
@@ -23,4 +24,4 @@ function IAlsoNeedADate ({date}: {date: any}) {
 	)
 }
 
-export default IAlsoNeedADate
+export default withDate(IAlsoNeedADate)

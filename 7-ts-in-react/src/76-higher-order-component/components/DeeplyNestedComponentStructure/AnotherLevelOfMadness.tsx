@@ -1,11 +1,11 @@
 import React from 'react'
 import IAlsoNeedADate from './IAlsoNeedADate'
 
-function AnotherLevelOfMadness ({date}: any) {
+function AnotherLevelOfMadness () {
 
 	return (
 		<div>
-			<IAlsoNeedADate date={date} />
+			<IAlsoNeedADate />
 		</div>
 	)
 }

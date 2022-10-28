@@ -19,7 +19,7 @@ export function AppWithHigherOrderComponents () {
 			<main className="container">
 				<ShowUSADate date={todayIs} />
 				<ShowEUDate date={todayIs} />
-				<DeeplyNestedComponentStructure date={todayIs} />
+				<DeeplyNestedComponentStructure />
 			</main>
 		</div>
 	)

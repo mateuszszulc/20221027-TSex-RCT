@@ -1,10 +1,10 @@
 import React from 'react'
 import AnotherLevelOfMadness from './AnotherLevelOfMadness'
 
-function DeeplyNestedComponentStructure ( {date}: any ) {
+function DeeplyNestedComponentStructure ( ) {
 	return (
 		<div>
-			 <AnotherLevelOfMadness date={date}/>
+			 <AnotherLevelOfMadness />
 		</div>
 	)
 }

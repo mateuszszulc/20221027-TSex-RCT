@@ -21,21 +21,21 @@ const root = ReactDOM.createRoot(
 * W praktyce są to osobne foldery z `root` Component.
 * */
 const Run = {
-    Task71: AppSimpleStaticData,
-    Task72: AppUseStateAndHooks,
-    Task73: AppMyOwnHook,
-    Task74: AppFunctionAsAChildComponent,
-    Task75: AppContextCommunication,
-    Task76: AppWithHigherOrderComponents,
-    Task77: AppWithClassComponent,
+  Task71: AppSimpleStaticData,
+  Task72: AppUseStateAndHooks,
+  Task73: AppMyOwnHook,
+  Task74: AppFunctionAsAChildComponent,
+  Task75: AppContextCommunication,
+  Task76: AppWithHigherOrderComponents,
+  Task77: AppWithClassComponent,
 }
 
 root.render(
   <React.StrictMode>
-      {/*
+    {/*
         Tutaj poniżej podmieniasz numer zadania np. Run.Task73
         i wtedy je widać po `npm start` w przeglądarce i można zacząć rozwiązywać.
        */}
-      <Run.Task74 />
+    <Run.Task76 />
   </React.StrictMode>
 );
