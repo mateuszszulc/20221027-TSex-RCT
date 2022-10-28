@@ -13,5 +13,5 @@ export const div = (className = '') => createElement('div', className)
 export const section = (className = '') => createElement('section', className)
 export const article = (className = '') => createElement('article', className)
 
-
-const myElement = document.createElement('div')
+// checkout:
+// const myElement = document.createElement('div')
