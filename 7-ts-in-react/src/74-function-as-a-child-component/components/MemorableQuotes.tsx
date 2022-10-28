@@ -1,6 +1,9 @@
+import { QuotesLoadingData } from '../providers/QuotesProvider'
 import { BlockQuote } from './BlockQuote'
 
-export function MemorableQuotes({ isLoading, quotes = []}: any) {
+type MemorableQuotesProps = {title?: string} & QuotesLoadingData
+
+export function MemorableQuotes({ isLoading, quotes = [], title = ''}: MemorableQuotesProps) {
 	
 	return (
 		<section className="panel is-primary">

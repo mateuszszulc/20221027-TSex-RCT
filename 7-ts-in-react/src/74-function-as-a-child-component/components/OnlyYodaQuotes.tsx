@@ -1,8 +1,9 @@
+import { QuotesLoadingData } from '../providers/QuotesProvider'
 import { BlockQuote } from './BlockQuote'
 
-export function OnlyYodaQuotes({ isLoading, quotes = [] }: any) {
+export function OnlyYodaQuotes({ isLoading, quotes = [] }: QuotesLoadingData) {
 
-	const yodaQuotes = quotes.filter((q: any) => q.author === 'Yoda')
+	const yodaQuotes = quotes.filter((q) => q.author === 'Yoda')
 
 	return (
 		<section className="panel is-info">

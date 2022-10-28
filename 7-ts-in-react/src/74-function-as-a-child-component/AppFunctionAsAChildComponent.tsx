@@ -1,26 +1,6 @@
-import { useEffect, useState } from 'react'
 import { MemorableQuotes } from './components/MemorableQuotes'
 import { OnlyYodaQuotes } from './components/OnlyYodaQuotes'
-import { starWarsQuotesService } from './services/swQuotesService'
-
-function QuotesProvider({ children }: any) {
-
-	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<any[]>([])
-
-	useEffect(() => {
-		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then((quotes) => {
-				setQuotes(quotes)
-			})
-			.finally(() => setLoading(false))
-	}, [])
-
-
-	return children({isLoading, quotes})
-}
-
+import { QuotesProvider } from './providers/QuotesProvider'
 
 export function AppFunctionAsAChildComponent() {
 	return (
@@ -36,7 +16,7 @@ export function AppFunctionAsAChildComponent() {
 				<div className="columns">
 					<QuotesProvider>
 						{
-							(props: any) => (
+							(props) => (
 								<>
 									<div className="column">
 										<MemorableQuotes {...props} />
