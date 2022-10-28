@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { div, p, section } from '../framework/dom-creators.js'
 
 

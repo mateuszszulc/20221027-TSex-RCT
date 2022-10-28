@@ -1,4 +1,4 @@
-interface Money {
+export interface Money {
     value: number;
     currency: 'PLN' | 'USD'; 
 }
