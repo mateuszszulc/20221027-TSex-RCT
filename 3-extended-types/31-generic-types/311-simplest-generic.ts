@@ -19,8 +19,12 @@
 // Najbardziej oczywistym typem generycznym są tablice (Arrays).
 // W momencie jej definiowania "dopisujemy" co faktycznie będzie przechowywać:
 
+const numbers: Array<number> = [1, 2, 3]
+const numbers2: number[] = [1, 2, 3]
+
 let undefinedArray: Array<string>;
-const mySampleArray: Array<string | number> = [];
+const mySampleArray: Array<string | number> = [1, '1', /* ale nie: {}*/];
+const mySampleArray2: Array<any> = [1, 2, 3, true, {}];
 
 mySampleArray.push(1120);
 mySampleArray.push('23');

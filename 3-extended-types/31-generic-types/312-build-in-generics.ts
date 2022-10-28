@@ -27,10 +27,10 @@ async function makeStringPromise() {
     return 'Hello M8!'
 }
 
-const myStringPromise: Promise<string> = makeStringPromise();
+const myStringPromise = makeStringPromise();
 
 myStringPromise
-    .then((value: string) => {
+    .then((value) => {
         console.log(value)
     })
     .catch((error?: any) => {  // zgodnie z sygnaturą typu, error może być :any !

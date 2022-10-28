@@ -1,6 +1,6 @@
 // Całe piękno typów generycznych, polega na możliwości tworzenia własnych.
 // Możemy przykładowo - utworzyć funkcję, która nie wie jeszcze jaki dokładnie typ będzie logować na konsoli
-function logItOut<ITER> (something: ITER) {
+function logItOut<ITER>(something: ITER) {
     console.log(something);
 }
 
@@ -25,7 +25,7 @@ logItOut<number>(12012);
 
 // Zobaczmy funkcję, która "opakowuje" 2 dane w tablicę:
 // [!] Zapis 'T' jest umowny, możemy typ generyczny nazwać dowolnie — to nasza decyzja.
-function wrapInArray<T>(first: T, second: T): T[] {
+function wrapInArray<T>(first: T, second: T): [T, T] {
     return [first, second];
 }
 
@@ -53,7 +53,7 @@ console.log(myFlags);
 // To znaczy - co w sytuacji gdy chcemy mieć dane różnego typu w naszym zwracanym Array?
 // Przykładowo Array<string | number> ??
 
-function wrapInArrayDifferent<T1, T2>(first: T1, second: T2): (T1|T2)[] {
+function wrapInArrayDifferent<T1, T2>(first: T1, second: T2): (T1 | T2)[] {
     return [first, second];
 }
 
@@ -75,7 +75,7 @@ numbersOrStrings.push('123');
 
 // nawina implementacja:
 class AnythingToString<ANYTHING> {
-    constructor(private value: ANYTHING) {}
+    constructor(private value: ANYTHING) { }
 
     toString(): string {
         return String(this.value);
@@ -99,7 +99,7 @@ const nullString = new AnythingToString(null);
 console.log(nullString.toString());
 console.log(nullString.showType());
 // Zauważ, że w tym układzie TypeScript podpowiada nam co dokładnie jest zwracane przez .getValue() !
-console.log(numberString.getValue());
+console.log(nullString.getValue());
 
 
 
@@ -107,7 +107,7 @@ console.log(numberString.getValue());
 // Typ generyczny możemy zawęzić, na przykład ograniczając go do obiektów, które posiadają pewne własności:
 
 class ArrayLogger<TO_LOG extends Array<string>> {
-    constructor(private value: TO_LOG) {}
+    constructor(private value: TO_LOG) { }
     log(): void {
         console.log(this.value);
     }
@@ -126,21 +126,28 @@ printToLog.log();
 // Finalnie!
 // Możemy przygotować bardziej użyteczny przykład, gdzie logować można tablicę, tylko tablicę - ale dowolnego typu:
 
-class AdvancedArrayLogger<ARRAY_TYPE, TO_LOG extends Array<ARRAY_TYPE>> {
-    constructor(private value: TO_LOG) {}
+class AdvancedArrayLogger<ARRAY_TYPE, TO_LOG extends ARRAY_TYPE[]> {
+    constructor(private value: TO_LOG) { }
     log(): void {
         console.log(this.value);
+    }
+
+    firstElement(): ARRAY_TYPE {
+        return this.value[0]
     }
 }
 
 // zdajemy się na wnioskowanie typów:
-const arrayToLog = new AdvancedArrayLogger([1, 3, 4, 5]);
+const arrayToLog = new AdvancedArrayLogger<number, number[]>([1, 3, 4, 5]);
 arrayToLog.log();
+
+arrayToLog.firstElement()
 
 // lub piszemy bardziej konkretnie
 const arrayToLog2 = new AdvancedArrayLogger<string, string[]>(['c', 'd', 'e']);
 arrayToLog2.log();
 
+arrayToLog2.firstElement()
 
 // Zadziała również obiekt, który dziedziczy po natywnym Array!
 class MyStringArray extends Array<string> {
@@ -183,4 +190,4 @@ const myOtherObject: OtherComplex<string, string[]> = {
 //     special: ['my', 1]
 // }
 
-export {}
+export { }
