@@ -7,3 +7,14 @@ export interface User {
         catchPhrase?: string
     };
 }
+
+// Obrona podejścia "walk like a duck" (strukturalne typowanie w TS)
+
+// const user: User = {
+//     id: 0,
+//     name: "",
+//     email: ""
+// } 
+
+// Nie pozwoli nam użyć czegoś co istnieje na innej instancji (ale nie istnieje w założeniach tego interfejsu)
+// console.log(user?.company?.name)

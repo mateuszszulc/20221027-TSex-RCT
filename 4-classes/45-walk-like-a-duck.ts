@@ -13,6 +13,7 @@ class Dog {
 class Cat {
     name: string;
     breed: string;
+    // hello: string;
 }
 
 const barkingDog: Dog = new Dog();
@@ -33,4 +34,4 @@ const barkingCat: Cat = new Dog(); // Ok ---- JAK TO ?! nie ma błędu ?!
  * Wszystko jednak sprowadza się do porównania struktury danych.
  * */
 
-export {}
+export { }
