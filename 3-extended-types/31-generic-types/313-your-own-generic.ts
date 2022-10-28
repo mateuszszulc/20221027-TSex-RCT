@@ -190,4 +190,16 @@ const myOtherObject: OtherComplex<string, string[]> = {
 //     special: ['my', 1]
 // }
 
+
+interface GenericWithDefault<STH = string> {
+    something: STH;
+}
+
+let sth: GenericWithDefault
+
+sth = {
+    something: '2' 
+}
+
+
 export { }
