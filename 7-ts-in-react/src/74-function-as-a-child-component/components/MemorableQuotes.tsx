@@ -1,21 +1,7 @@
-import React, {  useEffect, useState } from 'react'
-import { starWarsQuotesService } from '../services/swQuotesService'
 import { BlockQuote } from './BlockQuote'
 
-export function MemorableQuotes() {
-	const [isLoading, setLoading] = useState(false)
-	const [quotes, setQuotes] = useState<any[]>([])
-
-	useEffect(() => {
-		setLoading(true)
-		starWarsQuotesService.getAll()
-			.then((quotes) => {
-				setQuotes(quotes)
-			})
-			.finally(() => setLoading(false))
-	}, [])
-
-
+export function MemorableQuotes({ isLoading, quotes = []}: any) {
+	
 	return (
 		<section className="panel is-primary">
 			<p className="panel-heading">
@@ -27,7 +13,7 @@ export function MemorableQuotes() {
 			}
 			{
 				!isLoading &&
-				quotes.map((q) => (<BlockQuote key={q.text} quote={q} />))
+				quotes.map((q: any) => (<BlockQuote key={q.text} quote={q} />))
 			}
 		</section>
 	)
