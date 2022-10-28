@@ -12,7 +12,7 @@ function CartSite(){
             <div>
                 <ul className="list-group">
                     {
-                        cartItems.map((i) => <CartItem key={i.id} {...i.auction} amount={i.amount} />)
+                        cartItems.map((i: any) => <CartItem key={i.id} {...i.auction} amount={i.amount} />)
                     }
                 </ul>
             </div>
