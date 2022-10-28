@@ -30,6 +30,6 @@ root.render(
         Tutaj poniżej podmieniasz numer zadania np. Run.Task73
         i wtedy je widać po `npm start` w przeglądarce i można zacząć rozwiązywać.
        */}
-      <Run.Task71 />
+      <Run.Task72 />
   </React.StrictMode>
 );
