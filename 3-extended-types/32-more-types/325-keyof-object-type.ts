@@ -18,7 +18,7 @@ interface UserActions {
 type PossibleUserActions = keyof UserActions;
 
 
-const actionFromSerializer: PossibleUserActions = 'makeUser';
+const actionFromSerializer: PossibleUserActions = 'updateUser';
 const actionFromSerializer2: PossibleUserActions = 'getUser';
 
 
