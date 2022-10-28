@@ -1,5 +1,11 @@
 {
   "name": "52-vanilla-project",
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
 }

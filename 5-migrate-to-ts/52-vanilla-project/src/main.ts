@@ -2,4 +2,8 @@ import { root } from './shop/root.component.js'
 
 const $app = document.querySelector('#app')
 
-$app.append(root())
+if ($app) {
+    $app.append(root())
+}
+
+console.log('Hello ?')
