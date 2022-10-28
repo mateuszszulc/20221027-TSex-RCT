@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes, { InferProps } from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
@@ -11,12 +11,9 @@ AuctionItem.propTypes = {
     moveToCart: PropTypes.func,
  };
 
- AuctionItem.defaultProps = {
-    description: 'Jakiś opis...',
-    moveToCart: () => {}
- };
+type AuctionItemProps = InferProps<typeof AuctionItem.propTypes>
 
-function AuctionItem({ id, title, description, imgURL, price, moveToCart }) {
+function AuctionItem({ id, title, imgURL, price, description = 'Jakiś opis...', moveToCart = () => {} }: AuctionItemProps) {
     const auction = { id, title, description, imgURL, price };
     return (
         <div className="card">
@@ -26,7 +23,7 @@ function AuctionItem({ id, title, description, imgURL, price, moveToCart }) {
                 <p className="card-text">{description}</p>
                 <div className="d-flex justify-content-between">
                     <strong>{price} zł</strong>
-                    <button onClick={() => moveToCart(auction)} className="btn btn-primary">
+                    <button onClick={() => moveToCart?.(auction)} className="btn btn-primary">
                         <FontAwesomeIcon icon={faCartPlus} />
                     </button>
                 </div>

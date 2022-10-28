@@ -1,5 +1,9 @@
+import { Auction } from './Auction'
+import { CartProduct } from './CartProduct'
 
-function CartItem({title, imgURL, price, description, amount}) {
+type PropTypes = Auction & Pick<CartProduct, 'amount'>
+
+function CartItem({title, imgURL, price, description, amount}: PropTypes) {
 	return (
 		<li className="list-group-item d-flex p-3" style={{height: 160}}>
 			<img src={ imgURL } alt={ title } style={{maxWidth: 160}} className="img-fluid rounded mx-2" />

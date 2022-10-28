@@ -13,7 +13,7 @@ export function LogInSite() {
 		const user = useSelector(selectUser)
 		const dispatch = useDispatch()
 
-		const handleSubmit = (ev) => {
+		const handleSubmit = (ev: React.FormEvent) => {
 			ev.preventDefault();
 			if(!email) {
 				return

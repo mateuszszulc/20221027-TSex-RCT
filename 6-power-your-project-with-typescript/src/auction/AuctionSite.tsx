@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useGetAllAuctionsQuery } from '../services/auctions-api';
+import { Auction } from './Auction'
 import { addToCart } from './cartSlice';
 
 import AuctionItem from './AuctionItem'
@@ -20,7 +21,7 @@ function AuctionsSite () {
               {
                 isLoading ? <div className="alert alert-info">Loading...</div> :
                     error ? <ErrorMessage msg={(error as any).error}/> :
-                      auctions.map( ( auction ) => (
+                      auctions.map( ( auction: Auction ) => (
                         <div key={auction.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                             <AuctionItem {...auction} moveToCart={(auction) => dispatch(addToCart(auction))}   />
                         </div>
