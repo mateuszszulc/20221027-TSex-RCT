@@ -34,6 +34,8 @@ const noValue: null = null;
 
 // W przeciwieństwie do JS nie da się dynamicznie zmienić typu:
 let mySample: string;
+
+
 mySample = 'I am a string... always';
 // Operacja niedozwolona:
 // mySample = 1234;
@@ -52,6 +54,8 @@ let inferredNumber = 1275612.82;
 let inferredBigInt = 10n;
 let inferredBoolean = false;
 let inferredSymbol = Symbol();
+
+// inferredWord = 1;
 // tego nie da się zrobić inferred z racji działania JS
 // undefined to "subtype of all other types"
 let inferredAny = undefined;
