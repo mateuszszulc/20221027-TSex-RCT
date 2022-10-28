@@ -1,3 +1,4 @@
+
 export interface User {
     id: number;
     website?: string;
@@ -6,6 +7,13 @@ export interface User {
     company?: {
         catchPhrase?: string
     };
+}
+
+type UpdateUser = Omit<User, 'id'>
+
+const user: UpdateUser = {
+    email: '',
+    name: ''
 }
 
 // Obrona podejścia "walk like a duck" (strukturalne typowanie w TS)
