@@ -8,6 +8,7 @@ import ItemsCartCounter from './ItemsCartCounter'
 
 function AuctionsSite () {
 
+    // @ts-ignore
     const { data: auctions, error, isLoading } = useGetAllAuctionsQuery()
     const dispatch = useDispatch()
 
@@ -18,7 +19,7 @@ function AuctionsSite () {
           <div className="row mt-2">
               {
                 isLoading ? <div className="alert alert-info">Loading...</div> :
-                    error ? <ErrorMessage msg={error.error}/> :
+                    error ? <ErrorMessage msg={(error as any).error}/> :
                       auctions.map( ( auction ) => (
                         <div key={auction.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                             <AuctionItem {...auction} moveToCart={(auction) => dispatch(addToCart(auction))}   />

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import AuctionItem from './AuctionItem'
 import { fireEvent, render } from '@testing-library/react'
@@ -11,6 +12,7 @@ describe('AuctionItem', () => {
         };
         const spyOnMoveToCart = jest.fn();
         const { container } = render(<AuctionItem {...auction} moveToCart={spyOnMoveToCart} />);
+        // eslint-disable-next-line testing-library/no-container,testing-library/no-node-access
         const button = container.querySelector('.btn.btn-primary');
         // ACT
         fireEvent.click(button);
