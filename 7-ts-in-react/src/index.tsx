@@ -7,6 +7,9 @@ import { AppMyOwnHook } from './73-my-own-hook/AppMyOwnHook'
 import { AppFunctionAsAChildComponent } from './74-function-as-a-child-component/AppFunctionAsAChildComponent'
 
 import 'bulma/css/bulma.css';
+import { AppContextCommunication } from './75-context-communication/AppContextCommunication';
+import { AppWithHigherOrderComponents } from './76-higher-order-component/AppWithHigherOrderComponents';
+import AppWithClassComponent from './77-legacy-class-components/AppWithClassComponent';
 
 
 const root = ReactDOM.createRoot(
@@ -22,6 +25,9 @@ const Run = {
     Task72: AppUseStateAndHooks,
     Task73: AppMyOwnHook,
     Task74: AppFunctionAsAChildComponent,
+    Task75: AppContextCommunication,
+    Task76: AppWithHigherOrderComponents,
+    Task77: AppWithClassComponent,
 }
 
 root.render(
@@ -30,6 +36,6 @@ root.render(
         Tutaj poniżej podmieniasz numer zadania np. Run.Task73
         i wtedy je widać po `npm start` w przeglądarce i można zacząć rozwiązywać.
        */}
-      <Run.Task72 />
+      <Run.Task74 />
   </React.StrictMode>
 );
